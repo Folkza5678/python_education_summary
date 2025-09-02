@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EDU·FILE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="brand">
+        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="EDU·FILE" class="logo" />
+      </div>
+      <nav class="nav-links">
+        <a href="{{ url_for('home') }}">HOME</a>
+        <a href="{{ url_for('subject') }}">SUBJECT</a>
+        <a href="{{ url_for('register') }}">SETTING</a>
+      </nav>
+      <div class="profile-chip">
+        <span class="avatar"></span>
+        <span>UNAME</span>
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+          <path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </header>
+    <main class="page">
+      {% block content %}{% endblock %}
+    </main>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
