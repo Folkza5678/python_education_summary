@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="feed">
+  {% for p in posts %}
+  <article class="post">
+    <header class="post-head">
+      <div class="chip">
+        <span class="avatar"></span>
+        <span>UNAME</span>
+      </div>
+    </header>
+    <div class="post-body">
+      <h3>{{ p.title }}</h3>
+      {% if p.file %}
+      <a class="file-pill" href="#" download>
+        <span class="file-icon">{{ p.file.type|upper }}</span>
+        <span class="file-name">{{ p.file.name }}</span>
+      </a>
+      {% endif %}
+    </div>
+    <footer class="post-foot">
+      <input class="comment-input" placeholder="แสดงความคิดเห็น..." />
+    </footer>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

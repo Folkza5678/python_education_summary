@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="center-wrap">
+    <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="EDU·FILE" class="logo-large" />
+    <form class="panel" method="post">
+      <h2>REGISTER</h2>
+      <label>USERNAME
+        <input type="text" name="username" placeholder=" " required/>
+      </label>
+      <label>PASSWORD
+        <input type="password" name="password" placeholder=" " required/>
+      </label>
+      <label>REPEAT PASSWORD
+        <input type="password" name="password2" placeholder=" " required/>
+      </label>
+      <button type="submit" class="btn-primary">สร้างบัญชี</button>
+    </form>
+  </section>
+{% endblock %}
